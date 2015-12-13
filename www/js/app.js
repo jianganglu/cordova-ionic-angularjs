@@ -18,6 +18,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
     if(window.plugins && window.plugins.jPushPlugin) {
       window.plugins.jPushPlugin.init();
+      window.plugins.jPushPlugin.receiveMessageInAndroidCallback = function(data) {
+        alert(JSON.stringify(data));
+      }
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -80,7 +83,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+  .state('tab.me', {
+    url: '/me',
+    views: {
+      'tab-me': {
+        templateUrl: 'templates/tab-me.html'
+      }
+    }
+  })
+    .state('tab.me-settings', {
+      url: '/me/settings',
+      views: {
+        'tab-me': {
+          templateUrl: 'templates/settings.html',
+          controller: 'jpushCtrl as vm'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
