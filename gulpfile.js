@@ -11,7 +11,7 @@ var paths = {
   sass: ['./scss/**/*.scss'],
   templatecache: ['./www/templates/**/*.html'],
   minifyjs: ['./www/js/**/*.js'],
-  buildPath: './www/build'
+  buildPath: './www/dist'
 };
 
 //主任务
