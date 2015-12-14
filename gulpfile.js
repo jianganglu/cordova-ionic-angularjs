@@ -3,7 +3,8 @@ var gulp = require('gulp');
 var gulpLoadPlugins = require("gulp-load-plugins");
 var plug = gulpLoadPlugins({
   rename: {
-    'gulp-angular-templatecache': 'templateCache'
+    'gulp-angular-templatecache': 'templateCache',
+    'gulp-ng-annotate': 'ngAnnotate'
   }
 });
 
@@ -28,6 +29,7 @@ gulp.task('minifyjs', function() {
   var opt = {newLine: ';'};
 
   return gulp.src('./www/js/**/*.js')
+    .pipe(plug.ngAnnotate())
     .pipe(plug.ngmin({dynamic: false}))
     // .pipe(stripDebug())
     .pipe(plug.uglify({outSourceMap: false}))
@@ -39,6 +41,7 @@ gulp.task('minifyjs', function() {
 gulp.task('concat',function(done){
     gulp.src('./www/js/**/*.js')
       .pipe(plug.concat('main.js'))
+      .pipe(plug.ngAnnotate())
       .pipe(gulp.dest(paths.buildPath + '/js'))
       .on('end', done);
 });
@@ -65,6 +68,7 @@ gulp.task('templatecache', function (done) {
     gulp.src('./www/templates/**/*.html')
         .pipe(plug.templateCache({
             standalone:true,
+            module: 'starter.templates',
             base: function(file) {
               return 'templates/'+ file.relative;
         }}))
