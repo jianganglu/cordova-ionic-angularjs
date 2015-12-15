@@ -4,8 +4,9 @@
   angular.module('starter.controllers')
     .controller('userController', userController);
 
-  function userController() {
+  userController.$inject = ['userService'];
+  function userController(userService) {
     var vm = this;
-    console.log(12);
+    
   }
 })();
