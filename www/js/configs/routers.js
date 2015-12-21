@@ -56,6 +56,15 @@
           controller: 'AccountCtrl'
         }
       }
+    })
+
+    .state('tab.me', {
+      url: '/me',
+      views: {
+        'tab-me': {
+          templateUrl: 'templates/tab-me.html',
+        }
+      }
     });
 
     // if none of the above states are matched, use this as the fallback
