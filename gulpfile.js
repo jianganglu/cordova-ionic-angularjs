@@ -47,19 +47,35 @@ gulp.task('concat',function(done){
 });
 
 //sass
+// gulp.task('sass', function(done) {
+//   gulp.src('./scss/ionic.app.scss')
+//   .pipe(plug.sourcemaps.init())
+//     .pipe(plug.sass({
+//       errLogToConsole: true
+//     }))
+//     .pipe(gulp.dest(paths.buildPath + '/css'))
+//     .pipe(plug.minifyCss({
+//       keepSpecialComments: 0
+//     }))
+//     .pipe(plug.rename({ extname: '.min.css' }))
+//   .pipe(plug.sourcemaps.write('./maps'))
+//     .pipe(gulp.dest(paths.buildPath + '/css'))
+//     .on('end', done);
+// });
+
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
-  .pipe(plug.sourcemaps.init())
+    .pipe(plug.sourcemaps.init())
     .pipe(plug.sass({
       errLogToConsole: true
     }))
-    .pipe(gulp.dest(paths.buildPath + '/css'))
+    .pipe(gulp.dest('./www/css/'))
     .pipe(plug.minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(plug.rename({ extname: '.min.css' }))
   .pipe(plug.sourcemaps.write('./maps'))
-    .pipe(gulp.dest(paths.buildPath + '/css'))
+    .pipe(gulp.dest('./www/css/'))
     .on('end', done);
 });
 

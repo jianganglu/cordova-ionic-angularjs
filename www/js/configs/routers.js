@@ -65,7 +65,25 @@
           templateUrl: 'templates/tab-me.html',
         }
       }
-    });
+    })
+      .state('tab.me-settings', {
+        url: '/me/settings',
+        views: {
+          'tab-me': {
+            templateUrl: 'templates/me-settings.html',
+            controller: 'settingsCtrl as vm'
+          }
+        }
+      })
+      .state('tab.me-settings-mutilingual', {
+        url: '/me/settings/mutilingual',
+        views: {
+          'tab-me': {
+            templateUrl: 'templates/me-settings-multilingual.html',
+            controller: 'multilingualCtrl as vm'
+          }
+        }
+      });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/dash');
