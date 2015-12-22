@@ -2,12 +2,10 @@
   'use strict';
 
   angular.module('starter.directives')
-    .directive('hideTabs', hideTabs)
-    .directive('hello', hello);
+    .directive('hideTabs', hideTabs);
 
   hideTabs.$inject = ['$rootScope'];
   function hideTabs($rootScope) {
-    console.log(11);
     return {
       restrict: 'A',
       link: function(scope, element, attributes) {
@@ -22,12 +20,5 @@
         });
       }
     };
-  }
-
-  function hello() {
-    return {
-      restrict: 'EA',
-      template: '<div>hello</div>'
-    }
   }
 })();

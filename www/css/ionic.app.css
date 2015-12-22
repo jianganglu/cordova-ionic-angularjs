@@ -9730,3 +9730,13 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.tabs {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s; }
+
+.tabs-item-hide > .tabs {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  bottom: -49px;
+  display: flex; }

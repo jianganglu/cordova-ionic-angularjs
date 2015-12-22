@@ -13,3 +13,15 @@
 //     background: #ededed;
 //   }
 // }
+
+.tabs {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.tabs-item-hide > .tabs{
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  bottom: -$tabs-height;
+  display: flex;
+}
