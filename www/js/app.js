@@ -5,7 +5,14 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services']);
+angular.module('starter', [
+  'ionic',
+  'starter.apis',
+  'starter.services',
+  'starter.controllers',
+  'starter.utils',
+  'starter.directives',
+  'starter.filters']);
 angular.module('starter.apis', []);
 angular.module('starter.services', []);
 angular.module('starter.controllers', []);
