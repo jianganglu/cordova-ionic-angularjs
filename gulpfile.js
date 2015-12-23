@@ -31,7 +31,7 @@ gulp.task('minifyjs', function() {
   return gulp.src('./www/js/**/*.js')
     .pipe(plug.ngAnnotate())
     .pipe(plug.ngmin({dynamic: false}))
-    // .pipe(stripDebug())
+    // .pipe(plug.stripDebug())
     .pipe(plug.uglify({outSourceMap: false}))
     .pipe(plug.concat('main.min.js', opt))
     .pipe(gulp.dest(paths.buildPath + '/js'))
