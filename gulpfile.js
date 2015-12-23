@@ -16,7 +16,7 @@ var paths = {
 };
 
 //主任务
-gulp.task('default', ['sass', 'templatecache', 'concat', 'minifyjs', 'images']);
+gulp.task('default', ['sass', 'templatecache', 'concat', 'images']);
 
 //clean
 gulp.task('clean', function() {

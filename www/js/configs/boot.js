@@ -11,6 +11,19 @@
           cordova.plugins.Keyboard.disableScroll(true);
 
         }
+
+        // if(navigator.globalization) {
+        //   navigator.globalization.getPreferredLanguage(successCallback, errorCallback);
+
+        //   function successCallback(language) {
+        //     alert('language:' + language.value + '\n');
+        //   }
+
+        //   function errorCallback() {
+        //     alert('Error getting language\n');
+        //   }
+        // }
+
         if (window.StatusBar) {
           // org.apache.cordova.statusbar required
           StatusBar.styleDefault();

@@ -2,7 +2,14 @@
   'use strict';
 
   angular.module('starter')
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+
+    var lang = window.localStorage.lang || 'zh-CN';
+    $translateProvider.preferredLanguage(lang);
+    $translateProvider.useStaticFilesLoader({
+      prefix: '/i18n/',
+      suffix: '.json'
+    });
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router

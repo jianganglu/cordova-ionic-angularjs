@@ -12,7 +12,8 @@ angular.module('starter', [
   'starter.controllers',
   'starter.utils',
   'starter.directives',
-  'starter.filters']);
+  'starter.filters',
+  'pascalprecht.translate']);
 angular.module('starter.apis', []);
 angular.module('starter.services', []);
 angular.module('starter.controllers', []);

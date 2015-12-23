@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('starter')
-    .config(['$ionicConfigProvider', function($ionicConfigProvider) {
-      
+    .config(['$ionicConfigProvider', '$translateProvider', function($ionicConfigProvider, $translateProvider) {
+
     }]);
 })();
