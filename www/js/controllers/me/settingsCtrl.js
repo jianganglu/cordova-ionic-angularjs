@@ -4,7 +4,8 @@
   angular.module('starter.controllers')
     .controller('settingsCtrl', settingsCtrl);
 
-  function settingsCtrl() {
+  settingsCtrl.$inject = ['$localStorage'];
+  function settingsCtrl($localStorage) {
     var vm = this;
     console.log('settingsCtrl');
   }

@@ -20,8 +20,8 @@ gulp.task('default', ['sass', 'templatecache', 'concat', 'images']);
 
 //clean
 gulp.task('clean', function() {
-    return gulp.src([paths.buildPath], {read: false})
-        .pipe(plug.clean({force: true}));
+  return gulp.src([paths.buildPath], {read: false})
+    .pipe(plug.clean({force: true}));
 });
 
 //js
@@ -31,19 +31,20 @@ gulp.task('minifyjs', function() {
   return gulp.src('./www/js/**/*.js')
     .pipe(plug.ngAnnotate())
     .pipe(plug.ngmin({dynamic: false}))
-    // .pipe(plug.stripDebug())
+    .pipe(plug.stripDebug())
     .pipe(plug.uglify({outSourceMap: false}))
     .pipe(plug.concat('main.min.js', opt))
     .pipe(gulp.dest(paths.buildPath + '/js'))
 });
 
 //concat
-gulp.task('concat',function(done){
-    gulp.src('./www/js/**/*.js')
-      .pipe(plug.concat('main.js'))
-      .pipe(plug.ngAnnotate())
-      .pipe(gulp.dest(paths.buildPath + '/js'))
-      .on('end', done);
+gulp.task('concat',function(done) {
+  gulp.src('./www/js/**/*.js')
+    // .pipe(plug.stripDebug())
+    .pipe(plug.concat('main.js'))
+    .pipe(plug.ngAnnotate())
+    .pipe(gulp.dest(paths.buildPath + '/js'))
+    .on('end', done);
 });
 
 //sass
@@ -81,22 +82,22 @@ gulp.task('sass', function(done) {
 
 //html template
 gulp.task('templatecache', function (done) {
-    gulp.src('./www/templates/**/*.html')
-        .pipe(plug.templateCache({
-            standalone:true,
-            module: 'starter.templates',
-            base: function(file) {
-              return 'templates/'+ file.relative;
-        }}))
-        .pipe(gulp.dest(paths.buildPath + '/js'))
-        .on('end', done);
+  gulp.src('./www/templates/**/*.html')
+    .pipe(plug.templateCache({
+      standalone:true,
+      module: 'starter.templates',
+      base: function(file) {
+        return 'templates/'+ file.relative;
+    }}))
+    .pipe(gulp.dest(paths.buildPath + '/js'))
+    .on('end', done);
 });
 
 //Compress images
 gulp.task('images', function () {
-    return gulp.src('./www/img/**/*')
-        .pipe(plug.cache(plug.imagemin({optimizationLevel: 3})))
-        .pipe(gulp.dest(paths.buildPath + '/img'));
+  return gulp.src('./www/img/**/*')
+    .pipe(plug.cache(plug.imagemin({optimizationLevel: 3})))
+    .pipe(gulp.dest(paths.buildPath + '/img'));
 });
 
 //watch the change
