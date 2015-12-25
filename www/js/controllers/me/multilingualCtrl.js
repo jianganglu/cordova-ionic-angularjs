@@ -9,13 +9,12 @@
 
     var vm = this;
     // vm.cur_lang = $localStorage.getLangStore();
-    vm.cur_lang = $localStorage.getItem('lang');
+    vm.cur_lang = $localStorage.getLang();
     vm.switching = switching;
 
     function switching() {
-      console.log(vm.cur_lang);
       $translate.use(vm.cur_lang);
-      $localStorage.setItem('lang', vm.cur_lang);
+      $localStorage.storeLang(vm.cur_lang);
       // $localStorage.storeLang(vm.cur_lang);
     }
   }

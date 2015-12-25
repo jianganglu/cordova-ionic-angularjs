@@ -9,21 +9,31 @@
     var $localStorage = {
       setItem: setItem,
       getItem: getItem,
+      setObj: setObj,
+      getObj: getObj,
       removeItem: removeItem,
 
       storeLang: storeLang,
-      getLangStore: getLangStore
+      getLang: getLang
     };
 
-    function setItem(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
+    function setItem(key, value){
+      localStorage.setItem(key, value);
     }
 
-    function getItem(key) {
-      return JSON.parse(localStorage.getItem(key) || null);
+    function getItem(key){
+      return localStorage.getItem(key);
     }
 
-    function removeItem(key) {
+    function setObj(key, obj){
+      $window.localStorage[key] = JSON.stringify(obj);
+    }
+
+    function getObj(key){
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+
+    function removeItem(key){
       localStorage.removeItem(key);
     }
 
@@ -31,10 +41,10 @@
       this.setItem('lang', value);
     }
 
-    function getLangStore() {
+    function getLang() {
       return this.getItem('lang');
     }
 
-    return $localStorage;
+    return $localStorage
   };
 })();
