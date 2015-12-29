@@ -24,6 +24,7 @@
 
         scope.$on('$ionicView.loaded', function() {
           console.log('loaded');
+          $rootScope.hidepage = true;
         });
 
         scope.$on('$ionicView.enter', function() {
