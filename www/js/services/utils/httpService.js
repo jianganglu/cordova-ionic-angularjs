@@ -61,24 +61,25 @@
     }
 
     function responseError(config) {
-      var $cordovaDialogs = $injector.get('$cordovaDialogs');
-      var $ionicLoading = $injector.get('$ionicLoading');
-      var $state = $injector.get('$state');
-      var utilSrv = $injector.get('utilSrv');
-      $ionicLoading.hide();
-      if (config.status == 0) {
-        $cordovaDialogs.alert(utilSrv.instant('common.VALIDATE38'),utilSrv.instant('common.NOTICE'),utilSrv.instant('common.CONFIRM'));
-      }
-      if (config.status == 403 || config.status == 400 || config.status == 405) {
-        $cordovaDialogs.alert(utilSrv.instant('common.VALIDATE39'),utilSrv.instant('common.NOTICE'),utilSrv.instant('common.CONFIRM'));
-      }
-      if (config.status == 401){
-        $cordovaDialogs.alert(utilSrv.instant('common.VALIDATE40'), utilSrv.instant('common.NOTICE'),utilSrv.instant('common.CONFIRM')).then(function() {
-            utilSrv.clearAllDataAndCache();
-            $state.go('app.signin');
-          });
-      }
-      return $q.reject(config);
+      // var $cordovaDialogs = $injector.get('$cordovaDialogs');
+      // var $ionicLoading = $injector.get('$ionicLoading');
+      // var $state = $injector.get('$state');
+      // var utilSrv = $injector.get('utilSrv');
+      // $ionicLoading.hide();
+      // if (config.status == 0) {
+      //   $cordovaDialogs.alert(utilSrv.instant('common.VALIDATE38'),utilSrv.instant('common.NOTICE'),utilSrv.instant('common.CONFIRM'));
+      // }
+      // if (config.status == 403 || config.status == 400 || config.status == 405) {
+      //   $cordovaDialogs.alert(utilSrv.instant('common.VALIDATE39'),utilSrv.instant('common.NOTICE'),utilSrv.instant('common.CONFIRM'));
+      // }
+      // if (config.status == 401){
+      //   $cordovaDialogs.alert(utilSrv.instant('common.VALIDATE40'), utilSrv.instant('common.NOTICE'),utilSrv.instant('common.CONFIRM')).then(function() {
+      //       utilSrv.clearAllDataAndCache();
+      //       $state.go('app.signin');
+      //     });
+      // }
+      // return $q.reject(config);
+      return config;
     }
 
     return httpInterceptor;
