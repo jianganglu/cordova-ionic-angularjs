@@ -35,6 +35,7 @@ gulp.task('minifyjs', function() {
     .pipe(plug.uglify({outSourceMap: false}))
     .pipe(plug.concat('main.min.js', opt))
     .pipe(gulp.dest(paths.buildPath + '/js'))
+    .on('end', done);
 });
 
 //concat

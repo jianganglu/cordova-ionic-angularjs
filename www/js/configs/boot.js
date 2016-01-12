@@ -8,7 +8,7 @@
         // for form inputs)
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
           cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-          cordova.plugins.Keyboard.disableScroll(true);
+          // cordova.plugins.Keyboard.disableScroll(true);
 
         }
 
@@ -39,6 +39,16 @@
         //     }
         //   }
         // }
+        
+        if(window.plugins && window.plugins.umengAnalyticsPlugin) {
+          //初始化友盟统计配置
+          window.plugins.umengAnalyticsPlugin.init();
+          //调试模式
+          window.plugins.umengAnalyticsPlugin.setDebugMode(true);
+        }
+
+        //注意，这段代码是应用退出前保存统计数据，请在退出应用前调用
+        //window.plugins.umengAnalyticsPlugin.onKillProcess();
 
         if (window.StatusBar) {
           // org.apache.cordova.statusbar required

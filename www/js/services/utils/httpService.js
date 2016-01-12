@@ -31,7 +31,7 @@
       if(config.cache || config.url.indexOf('i18n') > 0){
         return config || $q.when(config);
       }else{
-        $ionicLoading.show();
+        // $ionicLoading.show();
         return config || $q.when(config);
       }
 

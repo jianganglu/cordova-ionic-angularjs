@@ -13,7 +13,7 @@
       return {
         USER_PROFILE: api.ROOT_URL + '/users/{userCode}',
         // GET 获取用户初始化数据
-        GET_USER_INIT_DATA: api.ROOT_URL + '/users/UI1450663665270100'
+        GET_USER_INIT_DATA: api.ROOT_URL + '/users/1450663665270100'
       }
     }
     // 模拟数据开关
@@ -21,7 +21,7 @@
       return {
         USER_PROFILE: '',
         // GET 获取用户初始化数据
-        GET_USER_INIT_DATA: api.ROOT_URL + '/users/UI1450663665270100'
+        GET_USER_INIT_DATA: api.ROOT_URL + '/users/1450663665270100'
       }
     }
   }

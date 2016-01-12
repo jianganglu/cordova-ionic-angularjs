@@ -1,9 +1,10 @@
 {
   "name": "cordova-ionic-angularjs",
-  "app_id": "",
+  "app_id": "1c60ce6c",
   "gulpStartupTasks": [
     "default",
-    "watch"
+    "watch",
+    "sass"
   ],
   "watchPatterns": [
     "www/**/*",
