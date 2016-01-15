@@ -5,3 +5,7 @@ node_modules/
 platforms/
 plugins/
 /www/dist
+/android.keystore
+/release.bat
+/sign.bat
+/start-build.bat
