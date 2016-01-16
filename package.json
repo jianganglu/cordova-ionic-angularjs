@@ -34,7 +34,8 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-globalization@~1.0.2"
+    "cordova-plugin-globalization@~1.0.2",
+    "com.telerik.plugins.nativepagetransitions"
   ],
   "cordovaPlatforms": []
 }

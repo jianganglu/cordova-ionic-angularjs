@@ -9,11 +9,21 @@
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+    .state('launch', {
+      url: '/launch',
+      templateUrl: 'templates/launch.html'
+    })
+
+      .state('signup', {
+        url: '/signup',
+        templateUrl: 'templates/signup.html'
+      })
+
     // setup an abstract state for the tabs directive
-      .state('tab', {
-        url: '/tab',
-        abstract: true,
-        templateUrl: 'templates/tabs.html'
+    .state('tab', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
     })
 
     // Each tab has its own nav history stack:
@@ -29,14 +39,14 @@
     })
 
     .state('tab.chats', {
-        url: '/chats',
-        views: {
-          'tab-chats': {
-            templateUrl: 'templates/tab-chats.html',
-            controller: 'ChatsCtrl'
-          }
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tab-chats.html',
+          controller: 'ChatsCtrl'
         }
-      })
+      }
+    })
       .state('tab.chat-detail', {
         url: '/chats/:chatId',
         views: {

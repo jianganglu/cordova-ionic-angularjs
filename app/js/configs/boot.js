@@ -12,8 +12,6 @@
 
         }
 
-        console.log(11);
-
         if (window.plugins && window.plugins.nativepagetransitions) {
           // then override any default you want
           window.plugins.nativepagetransitions.globalOptions.duration = 500;
