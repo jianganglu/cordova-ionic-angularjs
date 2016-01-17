@@ -11,13 +11,9 @@
 
     .state('launch', {
       url: '/launch',
-      templateUrl: 'templates/launch.html'
+      templateUrl: 'templates/launch.html',
+      controller: 'launchCtrl as vm'
     })
-
-      .state('signup', {
-        url: '/signup',
-        templateUrl: 'templates/signup.html'
-      })
 
     // setup an abstract state for the tabs directive
     .state('tab', {
@@ -95,7 +91,7 @@
       });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/dash');
+    $urlRouterProvider.otherwise('/launch');
 
   });
 })();

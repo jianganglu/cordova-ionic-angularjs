@@ -1,0 +1,19 @@
+﻿<ion-view class="launch" hide-nav-bar="true">
+  <ion-content>
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <div class="box blue"><h1><img src="./img/slider1.jpg"></h1></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow"><h1><img src="./img/slider2.jpg"></h1></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box pink"><h1><img src="./img/slider3.jpg"></h1></div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+  <div class="bar bar-footer">
+    <a class="bar-button bar-positive" ng-click="vm.openSignupModal()">注册</a>
+    <a class="bar-button" href="#/signup" transitiontype="curl" direction="left" go-native>登录</a>
+  </div>
+</ion-view>

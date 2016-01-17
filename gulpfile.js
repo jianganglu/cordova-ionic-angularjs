@@ -67,6 +67,10 @@ gulp.task('concat',function(done) {
   gulp.src('./app/js/**/*.js')
     // .pipe(plug.stripDebug())
     .pipe(plug.concat('main.js'))
+    .on('error', function(err) {
+      console.log(err);
+      this.emit('end');
+    })
     .pipe(plug.ngAnnotate())
     .pipe(gulp.dest(paths.buildPath + '/js'))
     .on('end', done);
